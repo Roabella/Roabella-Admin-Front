@@ -26,7 +26,7 @@ interface OptionDetail {
   price: number;
 }
 
-interface ProductFormData {
+export interface ProductFormData {
   name: string;
   price: number;
   category: string;
@@ -83,7 +83,10 @@ const ProductForm: React.FC<ProductFormProps> = ({
   }, [mode, initialData]);
 
   // 입력값 변경 핸들러
-  const handleInputChange = (field: keyof ProductFormData, value: any) => {
+  const handleInputChange = (
+    field: keyof ProductFormData,
+    value: string | number | boolean | string[] | File[] | ProductOption[]
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
@@ -190,7 +193,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
     optionId: string,
     detailId: string,
     field: keyof OptionDetail,
-    value: any
+    value: string | number
   ) => {
     setFormData((prev) => ({
       ...prev,

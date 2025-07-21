@@ -102,7 +102,10 @@ const AnnouncementEditForm: React.FC<AnnouncementEditFormProps> = ({ id }) => {
     setLoading(false);
   }, [id]);
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (
+    field: string,
+    value: string | boolean | string[]
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,

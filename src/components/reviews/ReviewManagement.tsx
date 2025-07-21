@@ -375,7 +375,7 @@ export const ReviewManagement: React.FC = () => {
               리뷰 삭제
             </h2>
             <p className="text-gray-600 mb-6">
-              "{selectedReview.title}" 리뷰를 삭제하시겠습니까?
+              &quot;{selectedReview.title}&quot; 리뷰를 삭제하시겠습니까?
               <br />
               <span className="text-red-600 font-medium">
                 이 작업은 되돌릴 수 없습니다.

@@ -158,7 +158,10 @@ const BannerManagement: React.FC = () => {
   };
 
   // 검색 필터 변경 핸들러
-  const handleFilterChange = (key: keyof SearchFilters, value: any) => {
+  const handleFilterChange = (
+    key: keyof SearchFilters,
+    value: string | boolean
+  ) => {
     setSearchFilters((prev) => ({
       ...prev,
       [key]: value,

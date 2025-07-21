@@ -307,7 +307,7 @@ const AnnouncementDetail: React.FC<AnnouncementDetailProps> = ({ id }) => {
               삭제 확인
             </h3>
             <p className="text-gray-600 mb-6">
-              "{announcement.title}" 공지사항을 정말 삭제하시겠습니까?
+              &quot;{announcement.title}&quot; 공지사항을 정말 삭제하시겠습니까?
               <br />
               삭제된 데이터는 복구할 수 없습니다.
             </p>

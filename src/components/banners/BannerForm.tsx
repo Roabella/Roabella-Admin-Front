@@ -135,7 +135,10 @@ const BannerForm: React.FC<BannerFormProps> = ({
   }, [mode, bannerId, initialData]);
 
   // 폼 데이터 변경 핸들러
-  const handleChange = (key: keyof BannerFormData, value: any) => {
+  const handleChange = (
+    key: keyof BannerFormData,
+    value: string | boolean | File | null
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [key]: value,

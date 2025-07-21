@@ -3,7 +3,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Layout from "@/components/layout/Layout";
-import ProductForm from "@/components/products/ProductForm";
+import ProductForm, {
+  ProductFormData,
+} from "@/components/products/ProductForm";
 
 // 샘플 상품 데이터 (실제로는 API에서 가져와야 함)
 const sampleProductData = {
@@ -146,7 +148,9 @@ const sampleProductData = {
 const EditProductPage: React.FC = () => {
   const params = useParams();
   const productId = params.id as string;
-  const [productData, setProductData] = useState<any>(null);
+  const [productData, setProductData] = useState<ProductFormData | undefined>(
+    undefined
+  );
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
