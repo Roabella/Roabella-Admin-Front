@@ -2,13 +2,13 @@ import Layout from "@/components/layout/Layout";
 import EventForm from "@/components/events/EventForm";
 
 interface EventEditPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function EventEditPage({ params }: EventEditPageProps) {
-  const { id } = params;
+export default async function EventEditPage({ params }: EventEditPageProps) {
+  const { id } = await params;
 
   // 실제 구현에서는 ID로 이벤트 데이터를 가져옴
   const eventData = {
@@ -23,8 +23,9 @@ export default function EventEditPage({ params }: EventEditPageProps) {
   };
 
   return (
-    <Layout title="이벤트 수정">
-      <EventForm initialData={eventData} mode="edit" />
-    </Layout>
+    <Layout
+      title="이벤트 수정"
+      children={<EventForm initialData={eventData} mode="edit" />}
+    />
   );
 }

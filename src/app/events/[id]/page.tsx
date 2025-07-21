@@ -1,16 +1,13 @@
 "use client";
 
+import React from "react";
+import { useParams } from "next/navigation";
 import Layout from "@/components/layout/Layout";
 import { ChevronLeft, Eye, EyeOff, Calendar, FileText } from "lucide-react";
 
-interface EventDetailPageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default function EventDetailPage({ params }: EventDetailPageProps) {
-  const { id } = params;
+export default function EventDetailPage() {
+  const params = useParams();
+  const id = params.id as string;
 
   // 실제 구현에서는 ID로 이벤트 데이터를 가져옴
   const eventData = {
